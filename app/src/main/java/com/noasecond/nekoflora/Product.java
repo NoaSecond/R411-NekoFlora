@@ -26,4 +26,14 @@ public class Product implements Serializable {
     public void setProductDescription(String productDescription) {this.productDescription = productDescription;}
     public void setProductDrawableID(int productDrawableID) {this.productDrawableID = productDrawableID;}
     public void setProductPrice(double productPrice) {this.productPrice = productPrice;}
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", productDescription='" + productDescription + '\'' +
+                ", productDrawableID='" + productDrawableID + '\'' +
+                '}';
+    }
 }

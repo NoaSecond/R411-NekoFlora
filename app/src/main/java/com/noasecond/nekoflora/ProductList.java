@@ -1,7 +1,12 @@
 package com.noasecond.nekoflora;
 
 import android.content.Context;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ProductList {
@@ -29,5 +34,7 @@ public class ProductList {
         productList.add(p2);
 
         //TODO générer la liste à partir d'un Json
+        //ObjectMapper objectMapper = new ObjectMapper();
+        //InputStream inputStream = new FileInputStream("/productList.json");
     }
 }
