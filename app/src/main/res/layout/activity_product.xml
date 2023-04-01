@@ -27,6 +27,7 @@
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
                 android:layout_weight="0"
+                android:contentDescription="logo"
                 app:srcCompat="@drawable/nekoflora_logo" />
 
             <TextView
@@ -34,7 +35,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Nom fleur"
                 android:textColor="#000000"
                 android:textSize="24sp" />
 
@@ -44,6 +44,7 @@
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:layout_weight="0"
+                android:contentDescription="shopping_cart"
                 app:srcCompat="@drawable/shopping_cart" />
         </LinearLayout>
 
@@ -58,7 +59,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Description"
             android:textColor="#323232"
             android:textSize="20sp" />
 

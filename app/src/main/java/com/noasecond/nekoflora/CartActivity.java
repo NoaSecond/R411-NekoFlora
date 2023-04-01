@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
@@ -29,11 +30,22 @@ public class CartActivity extends AppCompatActivity {
         selectedProducts = (ArrayList<Product>) intent.getSerializableExtra("SelectedProducts");
 
         //Init
+        TextView tv_titleCart = findViewById(R.id.tv_titleCart);
         LinearLayout display = findViewById(R.id.linearLayoutProductList);
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
+
+        //Define
+        tv_titleCart.setText("Pannier");
         tabLayout.addTab(tabLayout.newTab().setText("Livraison"));
         tabLayout.addTab(tabLayout.newTab().setText("Retrait"));
+
+        //DarkMode & DayMode
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.white));
+        } else {
+            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.black));
+        }
 
         //Add products
         for (Product product : selectedProducts) {

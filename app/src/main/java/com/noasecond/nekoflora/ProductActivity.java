@@ -3,10 +3,13 @@ package com.noasecond.nekoflora;
 import static com.noasecond.nekoflora.MainActivity.selectedProducts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.GridView;
@@ -36,18 +39,30 @@ public class ProductActivity extends AppCompatActivity {
         Intent intent = getIntent();
         choosedProduct = (Product) intent.getSerializableExtra("ChoosedProduct");
 
-        //Init components
+        //Init
         TextView tv_titleProduct = (TextView) findViewById(R.id.tv_titleProduct);
         TextView tv_productPageDesc = (TextView) findViewById(R.id.tv_descriptionProduct);
         GridView gv_productPage = (GridView) findViewById(R.id.gv_productPage);
         ImageView iv_shoppingCartProduct = (ImageView) findViewById(R.id.iv_shoppingCartProduct);
         Button btn_addToCart = (Button) findViewById(R.id.btn_addToCart);
 
-        //Define components
+        //DarkMode & DayMode
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.white));
+            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.white));
+            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, android.R.color.white), PorterDuff.Mode.SRC_IN);
+        } else {
+            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.black));
+            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.black));
+            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, android.R.color.black), PorterDuff.Mode.SRC_IN);
+        }
+
+        //Define
         ArrayList<Product> adapterList = new ArrayList<>();
         adapterList.add(choosedProduct);
         ProductAdapter adapter = new ProductAdapter(this, adapterList);
-        GridView display = findViewById(R.id.gv_productPage);
+        GridView display = gv_productPage;
         display.setAdapter(adapter);
         tv_titleProduct.setText("Produit :");
         tv_productPageDesc.setText(choosedProduct.getProductDescription());

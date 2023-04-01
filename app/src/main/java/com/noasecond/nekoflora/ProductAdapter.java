@@ -12,11 +12,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 
 public class ProductAdapter extends BaseAdapter {
+    ImageView display_productImage;
+    TextView display_productName;
+    TextView display_productPrice;
     private ArrayList<Product> productList;
     private Context context;
     private LayoutInflater mInflater;
@@ -45,22 +49,21 @@ public class ProductAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View layoutItem;
 
-        //(1) : Réutilisation des layouts
         layoutItem = convertView == null ? mInflater.inflate(R.layout.product_layout, parent, false) : convertView;
 
-        //(2) : Récupération des elements de notre layout
-        ImageView display_productImage = layoutItem.findViewById(R.id.iv_productImage);
-        TextView display_productName = layoutItem.findViewById(R.id.tv_productName);
-        TextView display_productPrice = layoutItem.findViewById(R.id.tv_productPrice);
+        //Init
+        display_productImage = layoutItem.findViewById(R.id.iv_productImage);
+        display_productName = layoutItem.findViewById(R.id.tv_productName);
+        display_productPrice = layoutItem.findViewById(R.id.tv_productPrice);
 
-        //(3) : Renseignement des valeurs
+        //Define
         int drawableId = ((Product) productList.get(position)).getProductDrawableID();
         Drawable drawable = ContextCompat.getDrawable(layoutItem.getContext(), drawableId);
         display_productImage.setImageDrawable(drawable);
         display_productName.setText(((Product) productList.get(position)).getProductName());
         display_productPrice.setText(((Product) productList.get(position)).getProductPrice()+" €");
 
-        //(5) : Evenement click
+        //Bind click
         display_productImage.setOnClickListener(e -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
             builder.setMessage("Aller sur la page produit ?");
