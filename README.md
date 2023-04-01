@@ -1,6 +1,6 @@
 <div style="display: flex;">
     <h1>NekoFlora</h1>
-    <img src="https://skillicons.dev/icons?i=androidstudio,java" id="skills" style="margin-left: 20px;">
+    <img src="https://skillicons.dev/icons?i=androidstudio,java,figma" id="skills" style="margin-left: 20px;">
 </div>
 
 ## Description :
