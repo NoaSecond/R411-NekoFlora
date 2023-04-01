@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         productList = new ProductList(this);
 
-        //Creation et initialisation de l'Adapter
+        //Adapter
         ProductAdapter adapter = new ProductAdapter(this, productList.productList);
         GridView display = findViewById(R.id.gv_productList);
         display.setAdapter(adapter);

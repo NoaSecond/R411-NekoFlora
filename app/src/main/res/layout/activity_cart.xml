@@ -37,7 +37,37 @@
                 android:text="Panier"
                 android:textColor="#000000"
                 android:textSize="24sp" />
+
         </LinearLayout>
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalscrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutProductList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <Button
+            android:id="@+id/btn_addToCart2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0"
+            android:backgroundTint="#56DDD5"
+            android:text="Commander"
+            android:textColor="#323232"
+            app:cornerRadius="100dp"
+            app:icon="@drawable/shopping_cart_checkout"
+            app:iconGravity="end"
+            app:iconSize="40dp"
+            app:iconTint="#323232" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

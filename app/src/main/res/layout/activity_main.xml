@@ -37,7 +37,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#D5D5D5">
+                android:background="#D5D5D5"
+                android:queryHint="Rechercher...">
 
             </SearchView>
 
@@ -53,6 +54,7 @@
         <GridView
             android:id="@+id/gv_productList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:numColumns="2" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

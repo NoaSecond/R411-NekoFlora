@@ -55,7 +55,7 @@ public class ProductActivity extends AppCompatActivity {
         //Bind shopping cart
         iv_shoppingCartProduct.setOnClickListener(e -> {
             if(selectedProducts.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Veuillez choisir au moin 1 produit.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Veuillez choisir au moin 1 produit.", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intentCart = new Intent(getApplicationContext(), CartActivity.class);
                 intentCart.putExtra("SelectedProducts", selectedProducts);
@@ -66,7 +66,7 @@ public class ProductActivity extends AppCompatActivity {
         //Bind add to cart
         btn_addToCart.setOnClickListener(e -> {
             selectedProducts.add(choosedProduct);
-            Toast.makeText(getApplicationContext(), "Produit ajouté au pannier !", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Produit ajouté au pannier !", Toast.LENGTH_SHORT).show();
         });
     }
 }

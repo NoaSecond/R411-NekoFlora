@@ -23,6 +23,10 @@ public class ProductList {
         int drawableId2 = context.getApplicationContext().getResources().getIdentifier("jon", "drawable", context.getApplicationContext().getPackageName());
         Product p2 = new Product("jon", 9.9, "C'est vraiment pas mal.", drawableId1);
         productList.add(p2);
+        //Product3
+        productList.add(p1);
+        //Product4
+        productList.add(p2);
 
         //TODO générer la liste à partir d'un Json
     }
