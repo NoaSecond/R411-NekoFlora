@@ -14,6 +14,7 @@ public class ProductList {
     }
 
     private void initList() {
+        //Liste générée en brut
         //Product1
         int drawableId1 = context.getApplicationContext().getResources().getIdentifier("an", "drawable", context.getApplicationContext().getPackageName());
         Product p1 = new Product("an", 9.9, "C'est vraiment pas mal.", drawableId1);
@@ -22,5 +23,7 @@ public class ProductList {
         int drawableId2 = context.getApplicationContext().getResources().getIdentifier("jon", "drawable", context.getApplicationContext().getPackageName());
         Product p2 = new Product("jon", 9.9, "C'est vraiment pas mal.", drawableId1);
         productList.add(p2);
+
+        //TODO générer la liste à partir d'un Json
     }
 }

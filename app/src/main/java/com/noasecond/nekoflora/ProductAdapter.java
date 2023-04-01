@@ -63,15 +63,15 @@ public class ProductAdapter extends BaseAdapter {
         //(5) : Evenement click
         display_productImage.setOnClickListener(e -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setMessage("Vous avez cliqué sur : "+((Product) productList.get(position)).getProductName());
-            builder.setTitle("Produit");
+            builder.setMessage("Aller sur la page produit ?");
+            builder.setTitle("Produit : "+((Product) productList.get(position)).getProductName());
             builder.setCancelable(false);
-            builder.setPositiveButton("Oui", (DialogInterface.OnClickListener) (dialog, which) -> {
+            builder.setPositiveButton("Consulter", (DialogInterface.OnClickListener) (dialog, which) -> {
                 MainActivity mainActivity = (MainActivity) this.context;
-                mainActivity.selectedProducts.add(productList.get(position));
+                mainActivity.openProductActivity((Product) productList.get(position));
                 dialog.cancel();
             });
-            builder.setNegativeButton("Non", (DialogInterface.OnClickListener) (dialog, which) -> {
+            builder.setNegativeButton("Annuler", (DialogInterface.OnClickListener) (dialog, which) -> {
                 dialog.cancel();
             });
             AlertDialog alertDialog = builder.create();

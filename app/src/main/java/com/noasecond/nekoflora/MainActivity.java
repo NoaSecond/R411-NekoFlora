@@ -2,6 +2,7 @@ package com.noasecond.nekoflora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
@@ -10,10 +11,11 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    public ArrayList<Product> selectedProducts = new ArrayList<>();
+    public static ArrayList<Product> selectedProducts = new ArrayList<>();
     public ProductList productList;
     //Components
     private SearchView sv_searchBar;
@@ -47,5 +49,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void openProductActivity(Product choosedProduct) {
+        Bundle bundle = new Bundle();
+        bundle.putString("mainContext", this.getApplicationContext().toString());
+
+
+
+        Intent intent = new Intent(getApplicationContext(), ProductActivity.class);
+        intent.putExtra("ChoosedProduct", choosedProduct);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public String getMainActivityId() {
+        return Integer.toHexString(System.identityHashCode(this));
     }
 }
