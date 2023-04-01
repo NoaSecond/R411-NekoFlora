@@ -20,6 +20,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ADF6F6F6"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -35,7 +36,8 @@
                 android:id="@+id/sv_searchBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="#D5D5D5">
 
             </SearchView>
 
@@ -47,5 +49,10 @@
                 android:layout_weight="0"
                 app:srcCompat="@drawable/shopping_cart" />
         </LinearLayout>
+
+        <GridView
+            android:id="@+id/gv_productList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
