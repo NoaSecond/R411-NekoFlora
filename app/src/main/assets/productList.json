@@ -1,0 +1,102 @@
+[
+  {
+    "productName": "an",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "azal",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "br",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "cal",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "can",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "fri",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "jon",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "kent",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "ly",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "nct",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "nmr",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "pachl",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "rha",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "ros",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "stfdm",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "stre",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "tufr",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "vafr",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "vel",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  },
+  {
+    "productName": "zamio",
+    "productPrice": 12.00,
+    "productDescription": "blablabla."
+  }
+]

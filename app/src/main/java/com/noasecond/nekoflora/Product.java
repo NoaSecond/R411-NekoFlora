@@ -15,6 +15,8 @@ public class Product implements Serializable {
         this.productDrawableID = productDrawableID;
     }
 
+    public Product() {}
+
     //Getter
     public String getProductName() {return this.productName;}
     public String getProductDescription() {return this.productDescription;}

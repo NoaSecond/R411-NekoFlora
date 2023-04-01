@@ -19,22 +19,19 @@ public class ProductList {
     }
 
     private void initList() {
-        //Liste générée en brut
-        //Product1
-        int drawableId1 = context.getApplicationContext().getResources().getIdentifier("an", "drawable", context.getApplicationContext().getPackageName());
-        Product p1 = new Product("an", 9.9, "C'est vraiment pas mal.", drawableId1);
-        productList.add(p1);
-        //Product2
-        int drawableId2 = context.getApplicationContext().getResources().getIdentifier("jon", "drawable", context.getApplicationContext().getPackageName());
-        Product p2 = new Product("jon", 9.9, "C'est vraiment pas mal.", drawableId1);
-        productList.add(p2);
-        //Product3
-        productList.add(p1);
-        //Product4
-        productList.add(p2);
+        ObjectMapper objectMapper = new ObjectMapper();
+        Product[] products = new Product[0];
+        try {
+            InputStream inputStream = context.getAssets().open("productList.json");
+            products = objectMapper.readValue(inputStream, Product[].class);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-        //TODO générer la liste à partir d'un Json
-        //ObjectMapper objectMapper = new ObjectMapper();
-        //InputStream inputStream = new FileInputStream("/productList.json");
+        for (Product product : products) {
+            int drawableId = context.getApplicationContext().getResources().getIdentifier(product.getProductName(), "drawable", context.getApplicationContext().getPackageName());
+            product.setProductDrawableID(drawableId);
+            productList.add(product);
+        }
     }
 }
