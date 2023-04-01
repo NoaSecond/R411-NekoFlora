@@ -44,7 +44,8 @@
             android:id="@+id/horizontalscrollview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="0"
+            android:contentDescription="horizontalScrollView">
 
             <LinearLayout
                 android:id="@+id/linearLayoutProductList"
@@ -52,6 +53,20 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal" />
         </HorizontalScrollView>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/simpleTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="tabLayout"
+            app:tabGravity="fill"
+            app:tabMode="fixed" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"></LinearLayout>
 
         <Button
             android:id="@+id/btn_addToCart2"

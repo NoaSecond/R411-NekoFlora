@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 
 public class CartActivity extends AppCompatActivity {
@@ -28,6 +30,10 @@ public class CartActivity extends AppCompatActivity {
 
         //Init
         LinearLayout display = findViewById(R.id.linearLayoutProductList);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
+        tabLayout.addTab(tabLayout.newTab().setText("Livraison"));
+        tabLayout.addTab(tabLayout.newTab().setText("Retrait"));
 
         //Add products
         for (Product product : selectedProducts) {
