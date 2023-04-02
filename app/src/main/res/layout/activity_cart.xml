@@ -74,6 +74,39 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:contentDescription="mapView" />
+
+            <LinearLayout
+                android:id="@+id/ll_livraison"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_firstname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Prénom"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/et_lastname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nom"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/et_postalAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Adresse"
+                    android:inputType="textPostalAddress" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
         <Button

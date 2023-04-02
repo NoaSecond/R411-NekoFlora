@@ -10,6 +10,9 @@ import java.util.ArrayList;
 public class PaymentActivity extends AppCompatActivity {
     private double totalPrice;
     private boolean delivery;
+    private String firstname;
+    private String lastname;
+    private String postalAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +23,10 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intent = getIntent();
         totalPrice = getIntent().getDoubleExtra("totalPrice", 0.0);
         delivery = getIntent().getBooleanExtra("delivery", false);
+        if (delivery) {
+            firstname = getIntent().getStringExtra("firstname");
+            lastname = getIntent().getStringExtra("lastname");
+            postalAddress = getIntent().getStringExtra("postalAddress");
+        }
     }
 }

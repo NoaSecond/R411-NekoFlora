@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -37,6 +38,15 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Button btn_checkout;
     private double totalPrice = 0.00;
     private boolean delivery = false;
+    private TextView tv_titleCart;
+    private LinearLayout display;
+    private TabLayout tabLayout;
+    private ConstraintLayout cl_cart;
+    private Intent intent;
+    private LinearLayout ll_livraison;
+    private EditText et_firstname;
+    private EditText et_lastname;
+    private EditText et_postalAddress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,17 +54,21 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         setContentView(R.layout.activity_cart);
 
         //Intent
-        Intent intent = getIntent();
+        intent = getIntent();
         selectedProducts = (ArrayList<Product>) intent.getSerializableExtra("SelectedProducts");
 
         //Init
         ll_tabWrap = findViewById(R.id.ll_tabWrap);
         mapView = findViewById(R.id.map_view);
-        TextView tv_titleCart = findViewById(R.id.tv_titleCart);
-        LinearLayout display = findViewById(R.id.linearLayoutProductList);
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
-        ConstraintLayout cl_cart = (ConstraintLayout) findViewById(R.id.cl_cart);
-        btn_checkout = (Button) findViewById(R.id.btn_checkout);
+        tv_titleCart = findViewById(R.id.tv_titleCart);
+        display = findViewById(R.id.linearLayoutProductList);
+        tabLayout = findViewById(R.id.simpleTabLayout);
+        cl_cart = findViewById(R.id.cl_cart);
+        btn_checkout = findViewById(R.id.btn_checkout);
+        ll_livraison = findViewById(R.id.ll_livraison);
+        et_firstname = findViewById(R.id.et_firstname);
+        et_lastname = findViewById(R.id.et_lastname);
+        et_postalAddress = findViewById(R.id.et_postalAddress);
 
         //Define
         tv_titleCart.setText("Pannier");
@@ -93,13 +107,34 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         //Bind checkout_button
         btn_checkout.setOnClickListener(e -> {
-            for (Product product : selectedProducts) {
-                totalPrice+= product.getProductPrice();
+            if(delivery) {
+                //Mode livraison
+                if (et_firstname.getText().toString().trim().isEmpty() || et_lastname.getText().toString().trim().isEmpty() || et_postalAddress.getText().toString().trim().isEmpty()) {
+                    //Champs non remplis
+                    Toast.makeText(getApplicationContext(), "Veuillez renseigner les informations.", Toast.LENGTH_SHORT).show();
+                } else {
+                    //Champs remplis
+                    for (Product product : selectedProducts) {
+                        totalPrice+= product.getProductPrice();
+                    }
+                    Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
+                    intentPayment.putExtra("totalPrice", totalPrice);
+                    intentPayment.putExtra("delivery", delivery);
+                    intentPayment.putExtra("firstname", et_firstname.getText().toString());
+                    intentPayment.putExtra("lastname", et_lastname.getText().toString());
+                    intentPayment.putExtra("postalAddress", et_postalAddress.getText().toString());
+                    startActivity(intentPayment);
+                }
+            } else {
+                //Mode retrait
+                for (Product product : selectedProducts) {
+                    totalPrice+= product.getProductPrice();
+                }
+                Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
+                intentPayment.putExtra("totalPrice", totalPrice);
+                intentPayment.putExtra("delivery", delivery);
+                startActivity(intentPayment);
             }
-            Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
-            intentPayment.putExtra("totalPrice", totalPrice);
-            intentPayment.putExtra("delivery", delivery);
-            startActivity(intentPayment);
         });
 
         //Bind Tabs
@@ -107,10 +142,12 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
+                    ll_tabWrap.removeAllViews();
                     ll_tabWrap.addView(mapView);
                     delivery = false;
                 } else {
                     ll_tabWrap.removeAllViews();
+                    ll_tabWrap.addView(ll_livraison);
                     delivery = true;
                 }
             }
@@ -122,6 +159,7 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         });
     }
 
+    //MapView
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
