@@ -1,6 +1,7 @@
 package com.noasecond.nekoflora;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -33,6 +34,7 @@ public class CartActivity extends AppCompatActivity {
         TextView tv_titleCart = findViewById(R.id.tv_titleCart);
         LinearLayout display = findViewById(R.id.linearLayoutProductList);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
+        ConstraintLayout cl_cart = (ConstraintLayout) findViewById(R.id.cl_cart);
 
         //Define
         tv_titleCart.setText("Pannier");
@@ -42,9 +44,11 @@ public class CartActivity extends AppCompatActivity {
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
-            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.white));
+            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.dayText));
+            cl_cart.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
         } else {
-            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.black));
+            tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.nightText));
+            cl_cart.setBackgroundColor(ContextCompat.getColor(this, R.color.nightBackground));
         }
 
         //Add products

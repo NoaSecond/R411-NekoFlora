@@ -3,6 +3,7 @@ package com.noasecond.nekoflora;
 import static com.noasecond.nekoflora.MainActivity.selectedProducts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
@@ -45,17 +46,20 @@ public class ProductActivity extends AppCompatActivity {
         GridView gv_productPage = (GridView) findViewById(R.id.gv_productPage);
         ImageView iv_shoppingCartProduct = (ImageView) findViewById(R.id.iv_shoppingCartProduct);
         Button btn_addToCart = (Button) findViewById(R.id.btn_addToCart);
+        ConstraintLayout cl_product = (ConstraintLayout) findViewById(R.id.cl_product);
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
-            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.white));
-            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.white));
-            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, android.R.color.white), PorterDuff.Mode.SRC_IN);
+            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.dayText));
+            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.dayText));
+            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, R.color.dayText), PorterDuff.Mode.SRC_IN);
+            cl_product.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
         } else {
-            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.black));
-            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.black));
-            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, android.R.color.black), PorterDuff.Mode.SRC_IN);
+            tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.nightText));
+            tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.nightText));
+            iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, R.color.nightText), PorterDuff.Mode.SRC_IN);
+            cl_product.setBackgroundColor(ContextCompat.getColor(this, R.color.nightBackground));
         }
 
         //Define

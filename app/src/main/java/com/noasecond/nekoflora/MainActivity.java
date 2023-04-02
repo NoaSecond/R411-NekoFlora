@@ -2,6 +2,7 @@ package com.noasecond.nekoflora;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private SearchView sv_searchBar;
     private ImageView iv_shoppingCart;
     private GridView gv_productList;
+    private ConstraintLayout cl_main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
         sv_searchBar = (SearchView) findViewById(R.id.sv_searchBar);
         iv_shoppingCart = (ImageView) findViewById(R.id.iv_shoppingCart);
         gv_productList = (GridView) findViewById(R.id.gv_productList);
+        cl_main = (ConstraintLayout) findViewById(R.id.cl_main);
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
-            iv_shoppingCart.setColorFilter(ContextCompat.getColor(this, android.R.color.white), PorterDuff.Mode.SRC_IN);
+            iv_shoppingCart.setColorFilter(ContextCompat.getColor(this, R.color.dayText), PorterDuff.Mode.SRC_IN);
+            cl_main.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
         } else {
-            iv_shoppingCart.setColorFilter(ContextCompat.getColor(this, android.R.color.black), PorterDuff.Mode.SRC_IN);
+            iv_shoppingCart.setColorFilter(ContextCompat.getColor(this, R.color.nightText), PorterDuff.Mode.SRC_IN);
+            cl_main.setBackgroundColor(ContextCompat.getColor(this, R.color.nightBackground));
         }
 
         //Bind shopping cart
