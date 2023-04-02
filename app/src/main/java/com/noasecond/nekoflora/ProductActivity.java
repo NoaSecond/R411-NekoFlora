@@ -50,7 +50,7 @@ public class ProductActivity extends AppCompatActivity {
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+        if (nightModeFlags != Configuration.UI_MODE_NIGHT_YES) {
             tv_titleProduct.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             tv_productPageDesc.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             iv_shoppingCartProduct.setColorFilter(ContextCompat.getColor(this, R.color.dayText), PorterDuff.Mode.SRC_IN);

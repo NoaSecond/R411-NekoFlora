@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+        if (nightModeFlags != Configuration.UI_MODE_NIGHT_YES) {
             iv_shoppingCart.setColorFilter(ContextCompat.getColor(this, R.color.dayText), PorterDuff.Mode.SRC_IN);
             cl_main.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
         } else {

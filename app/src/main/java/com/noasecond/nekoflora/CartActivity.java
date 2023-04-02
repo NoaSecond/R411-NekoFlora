@@ -1,5 +1,6 @@
 package com.noasecond.nekoflora;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -14,12 +15,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
-public class CartActivity extends AppCompatActivity {
+public class CartActivity extends AppCompatActivity implements OnMapReadyCallback {
+    private MapView mapView;
+    private GoogleMap mMap;
     ArrayList<Product> selectedProducts = new ArrayList<>();
+    private LinearLayout ll_tabWrap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,8 @@ public class CartActivity extends AppCompatActivity {
         selectedProducts = (ArrayList<Product>) intent.getSerializableExtra("SelectedProducts");
 
         //Init
+        ll_tabWrap = findViewById(R.id.ll_tabWrap);
+        mapView = findViewById(R.id.map_view);
         TextView tv_titleCart = findViewById(R.id.tv_titleCart);
         LinearLayout display = findViewById(R.id.linearLayoutProductList);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
@@ -38,12 +50,14 @@ public class CartActivity extends AppCompatActivity {
 
         //Define
         tv_titleCart.setText("Pannier");
-        tabLayout.addTab(tabLayout.newTab().setText("Livraison"));
         tabLayout.addTab(tabLayout.newTab().setText("Retrait"));
+        tabLayout.addTab(tabLayout.newTab().setText("Livraison"));
+        mapView.onCreate(savedInstanceState);
+        mapView.getMapAsync(this);
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+        if (nightModeFlags != Configuration.UI_MODE_NIGHT_YES) {
             tv_titleCart.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             cl_cart.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
         } else {
@@ -68,5 +82,51 @@ public class CartActivity extends AppCompatActivity {
 
             display.addView(productView);
         }
+
+        //Bind Tabs
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    ll_tabWrap.addView(mapView);
+                } else {
+                    ll_tabWrap.removeAllViews();
+                }
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {}
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {}
+        });
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        LatLng nice = new LatLng(43.697914, 7.265528);
+        mMap.addMarker(new MarkerOptions().position(nice).title("NekoFlora - Nice"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(nice));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        mapView.onPause();
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mapView.onDestroy();
+    }
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
     }
 }
