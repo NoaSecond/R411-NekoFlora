@@ -1,5 +1,7 @@
 package com.noasecond.nekoflora;
 
+import static com.noasecond.nekoflora.MainActivity.selectedProducts;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -10,10 +12,12 @@ import android.content.res.Configuration;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -30,6 +34,9 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
     ArrayList<Product> selectedProducts = new ArrayList<>();
     private LinearLayout ll_tabWrap;
+    private Button btn_checkout;
+    private double totalPrice = 0.00;
+    private boolean delivery = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,7 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         LinearLayout display = findViewById(R.id.linearLayoutProductList);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.simpleTabLayout);
         ConstraintLayout cl_cart = (ConstraintLayout) findViewById(R.id.cl_cart);
+        btn_checkout = (Button) findViewById(R.id.btn_checkout);
 
         //Define
         tv_titleCart.setText("Pannier");
@@ -83,14 +91,27 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
             display.addView(productView);
         }
 
+        //Bind checkout_button
+        btn_checkout.setOnClickListener(e -> {
+            for (Product product : selectedProducts) {
+                totalPrice+= product.getProductPrice();
+            }
+            Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
+            intentPayment.putExtra("totalPrice", totalPrice);
+            intentPayment.putExtra("delivery", delivery);
+            startActivity(intentPayment);
+        });
+
         //Bind Tabs
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
                     ll_tabWrap.addView(mapView);
+                    delivery = false;
                 } else {
                     ll_tabWrap.removeAllViews();
+                    delivery = true;
                 }
             }
             @Override
