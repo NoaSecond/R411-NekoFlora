@@ -23,7 +23,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/iv_logoCart"
+                android:id="@+id/iv_logoPayment"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_margin="10dp"
@@ -31,7 +31,7 @@
                 app:srcCompat="@drawable/nekoflora_logo" />
 
             <TextView
-                android:id="@+id/tv_titleCart"
+                android:id="@+id/tv_titlePayment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
