@@ -1,102 +1,102 @@
 [
   {
     "productName": "anthurium",
-    "productPrice": 12.00,
+    "productPrice": 45.00,
     "productDescription": "Grand classique parmi les plantes exotiques, l’anthurium donne l’impression qu’il tire la langue. Son extravagance, ses couleurs flamboyantes et ses fleurs en forme de cœur le rendraient-il arrogant ? Il est si bon meneur d'ambiance exotique qu’on ne lui en tient pas rigueur. Sous son tempérament de feu, il se cultive facilement."
   },
   {
     "productName": "azalee",
-    "productPrice": 12.00,
-    "productDescription": "L’azalée tige rose est un concentré de vitamines et de bonne humeur : sa floraison très colorée traverse tout l’hiver ! Son superbe feuillage vert et ses fleurs roses très poétiques apportent leur touche à la fois naturelle et originale. Cette plante originaire d’asie est propice à toutes les inspirations, les plus zen comme les plus jungle. L’azalée tige rose est une plante pleine de pep’s et très attachante, qui nécessite peu d’entretien. Il suffit de conserver sa motte toujours humide, mais pas gorgée d’eau, et de lui offrir une température modérée."
+    "productPrice": 75.00,
+    "productDescription": "L’azalée tige rose est un concentré de vitamines et de bonne humeur : sa floraison très colorée traverse tout l’hiver ! Cette plante originaire d’asie est propice à toutes les inspirations, les plus zen comme les plus jungle. L’azalée tige rose est une plante pleine de pep’s et très attachante, qui nécessite peu d’entretien. Il suffit de conserver sa motte toujours humide, mais pas gorgée d’eau, et de lui offrir une température modérée."
   },
   {
-    "productName": "bois_de_rose_et_son_vase_offert",
-    "productPrice": 12.00,
+    "productName": "rosier",
+    "productPrice": 47.00,
     "productDescription": "Délivrez vos plus beaux messages avec notre bouquet Bois de rose, une création florale en camaïeu rose composée de roses, lisianthus, germinis et autres fleurs variées. Présenté dans son vase offert, ce bouquet plein de tendresse signifie votre présence en toute occasion, sur un lieu de travail comme à la maison."
   },
   {
     "productName": "calin",
-    "productPrice": 12.00,
+    "productPrice": 40.00,
     "productDescription": "Pour accompagner vos attentions et autres petits mots doux de tous les jours, notre bouquet Câlin vous invite à surprendre votre destinataire en toute occasion, sur son lieu de travail comme à la maison. Un bouquet emmené par la magnifique rose rouge, fleur emblématique de la passion et des amoureux."
   },
   {
     "productName": "candide",
-    "productPrice": 12.00,
-    "productDescription": "avec sa floraison élégante qui évoque l'envol de papillons, notre orchidée phalaenopsis blanche à deux branches d'environ 50 cm vous invite à transmettre votre message avec tact et originalité. Que votre livraison de fleurs soit prévue sur un lieu de travail ou à la maison, voici une plante fleurie qui promet de créer une belle surprise toute en émotion."
+    "productPrice": 38.00,
+    "productDescription": "Avec sa floraison élégante qui évoque l'envol de papillons, notre orchidée phalaenopsis blanche à deux branches d'environ 50 cm vous invite à transmettre votre message avec tact et originalité. Que votre livraison de fleurs soit prévue sur un lieu de travail ou à la maison, voici une plante fleurie qui promet de créer une belle surprise toute en émotion."
   },
   {
     "productName": "frimousse",
-    "productPrice": 12.00,
-    "productDescription": "avec ses tons feutrés, notre bouquet Frimousse vous invite à transmettre votre message avec élégance et générosité. Composée tout en rondeur avec des roses, lisianthus, alstroemérias et hypéricums, cette création forale à dominante rose et rouge est emmenée par la magnifique rose, qui porte fièrement le surnom de reine des fleurs."
+    "productPrice": 38.00,
+    "productDescription": "Avec ses tons feutrés, notre bouquet Frimousse vous invite à transmettre votre message avec élégance et générosité. Composée tout en rondeur avec des roses, lisianthus, alstroemérias et hypéricums, cette création forale à dominante rose et rouge est emmenée par la magnifique rose, qui porte fièrement le surnom de reine des fleurs."
   },
   {
-    "productName": "brassee_de_jonquilles",
-    "productPrice": 12.00,
+    "productName": "jonquilles",
+    "productPrice": 30.00,
     "productDescription": "Le début du mois de mars est propice aux premiers bouquets de jonquilles qui symbolisent le retour des beaux jours. Pour illuminer la journée de votre destinataire, offrez-lui un cadeau de saison : une jolie brassée de jonquilles, effet surprise garanti ! Préparé et emballé précieusement dans l'atelier Interflora à Orléans."
   },
   {
     "productName": "kentia",
-    "productPrice": 12.00,
-    "productDescription": "Sublime palmier d’intérieur, notre Kentia est adulé par les plant-addicts. Cette jolie plante octroie une dose de verdure fraîche aux ambiances feutrées ; ses longues feuilles vert bouteille procureront une atmosphère douce et exotique à votre chez-vous. Sa tolérance à tous les environnements fait d’elle une plante très versatile, mais ce n’est pas tout : elle possède des propriétés purifiantes pour l'environnement et n’est pas toxique pour les animaux. Comment ne pas l'aimer ? Ce n’est pas pour rien qu’elle est surnommée “palmier d’Hollywood » ; la grâce de cette star tropicale est inimitable !"
+    "productPrice": 58.00,
+    "productDescription": "Cette jolie plante octroie une dose de verdure fraîche aux ambiances feutrées. Sa tolérance à tous les environnements fait d’elle une plante très versatile, mais ce n’est pas tout : elle possède des propriétés purifiantes pour l'environnement et n’est pas toxique pour les animaux. Comment ne pas l'aimer ? Ce n’est pas pour rien qu’elle est surnommée “palmier d’Hollywood » ; la grâce de cette star tropicale est inimitable !"
   },
   {
-    "productName": "brassee_de_lys",
-    "productPrice": 12.00,
+    "productName": "lys",
+    "productPrice": 55.00,
     "productDescription": "Notre délicieuse brassée de lys roses vous fera craquer ! Elle est votre meilleure alliée pour témoigner de votre affection à vos proches ou agrémenter votre cocon de tendresse. Son petit plus : pour en profiter plus longtemps, nous livrons vos lys juste avant éclosion ! Vous passerez des heures à contempler leur évolution…"
   },
   {
-    "productName": "nos_charmantes_tulipes",
-    "productPrice": 12.00,
-    "productDescription": "attendu impatiemment toute l’année, on vous présente un produit signature Interflora, parfait pour délivrer une bonne dose d’amour et de gaieté : la brassée de tulipes ! Des nuances roses, rouges, jaunes ou orangées, pour un feu d’artifice de couleurs, annonciateur du printemps qui se profile.La tulipe sera la fleur vedette de vos déclarations, idéale pour les petites comme les grandes occasions.Pour une longévité maximale chez votre destinataire, les tulipes sont amenées à être livrées fermées. Les fleurs peuvent mettre plusieurs jours à s’ouvrir."
+    "productName": "tulipes",
+    "productPrice": 30.00,
+    "productDescription": "Attendu impatiemment toute l’année, on vous présente un produit signature Interflora, parfait pour délivrer une bonne dose d’amour et de gaieté : la brassée de tulipes ! Des nuances roses, rouges, jaunes ou orangées, pour un feu d’artifice de couleurs, annonciateur du printemps qui se profile. Les fleurs peuvent mettre plusieurs jours à s’ouvrir."
   },
   {
-    "productName": "nos_merveilleuses_renoncules",
-    "productPrice": 12.00,
-    "productDescription": "Un événement à célébrer ? Invitez la renoncule à la fête, pour que celle-ci soit complète ! Grâce à ses couleurs vives et variées, cette fleur charnue dont nous raffolons tant chez Interflora égaye en un clin d’œil la journée de ceux et celles que vous aimez. avec ses pétales qui s’entrouvrent et se dévoilent tout en douceur, elle s’épanouit au fil des jours, au contact du soleil. Veillez toutefois à ne pas exposer la brassée à une lumière directe, pour en préserver sa beauté et sa fraîcheur."
+    "productName": "renoncules",
+    "productPrice": 32.00,
+    "productDescription": "Un événement à célébrer ? Invitez la renoncule à la fête, pour que celle-ci soit complète ! Avec ses pétales qui s’entrouvrent et se dévoilent tout en douceur, elle s’épanouit au fil des jours, au contact du soleil. Veillez toutefois à ne pas exposer la brassée à une lumière directe, pour en préserver sa beauté et sa fraîcheur."
   },
   {
-    "productName": "pachira_aquatica",
-    "productPrice": 12.00,
-    "productDescription": "avec des feuilles vert clair et un tronc tressé, le Pachira aquatica est une plante singulière. Celui que l’on appelle “arbre à argent” en asie inspire le respect… Mais pas uniquement à cause de sa taille imposante, qui varie selon les espèces. au-delà d’être source de fortune et de bonne santé, cette plante bien-aimée du feng-shui introduira harmonie et bien-être dans votre décoration d’intérieur. Facile d’entretien, notre Pachira aquatica plaira aux amateurs de feuillages à couper le souffle, mais qui n’ont pas la main verte. Grâce à l’ambiance zen qui émane d’elle, cette plante est la parfaite addition à votre collection. Son souffle tropical rafraîchira votre jungle urbaine."
+    "productName": "pachira",
+    "productPrice": 69.00,
+    "productDescription": "Avec des feuilles vert clair et un tronc tressé, le Pachira aquatica est une plante singulière. Celui que l’on appelle “arbre à argent” en asie inspire le respect… Facile d’entretien, notre Pachira aquatica plaira aux amateurs de feuillages à couper le souffle, mais qui n’ont pas la main verte. Son souffle tropical rafraîchira votre jungle urbaine."
   },
   {
     "productName": "rhapsodie",
-    "productPrice": 12.00,
+    "productPrice": 35.00,
     "productDescription": "Notre bouquet Rhapsodie vous invite à créer une surprise empreinte de bonne humeur et de vitalité auprès de vos destinataires. Composée dans des tons multicolores avec des roses, germinis, alstroemérias et fleurs variées, cette création florale survitaminée promet de réchauffer les coeurs, quelles que soient la saison et l'occasion."
   },
   {
     "productName": "rosalie",
-    "productPrice": 12.00,
+    "productPrice": 24.00,
     "productDescription": "Présenté dans sa bulle d'eau, notre bouquet rond Rosalie vous invite à créer une surprise pleine de tendresse auprès de votre destinataire, quelle que soit l'occasion. Composée avec des roses, lisianthus, germinis et autres fleurs variées aux tons rose et blanc, agrémentée de gypsophile, cette élégante création promet de transmettre tout en douceur les plus belles émotions."
   },
   {
     "productName": "stephanotis",
-    "productPrice": 12.00,
-    "productDescription": "Des petites lianes qui s’accrochent partout, des feuilles bien vertes, des petites fleurs blanches... le Stéphanotis transforme l’intérieur en un jardin parfumé en un rien de temps. a vous de laisser libre cours à sa nature sauvage ou de guider ses feuilles avec un arceau. Une plante jolie comme celle-ci à ses petites exigences, elle demande un peu d’attention, mais quand elle deviendra une belle liane grimpante et fleurie, vous serez bien récompensé.e."
+    "productPrice": 36.00,
+    "productDescription": "Des petites lianes qui s’accrochent partout, des feuilles bien vertes, des petites fleurs blanches... A vous de laisser libre cours à sa nature sauvage ou de guider ses feuilles avec un arceau. Une plante jolie comme celle-ci à ses petites exigences, elle demande un peu d’attention, mais quand elle deviendra une belle liane grimpante et fleurie, vous serez bien récompensé.e."
   },
   {
-    "productName": "strelitzia_nicolai",
-    "productPrice": 12.00,
-    "productDescription": "Vous cherchez une plante à l’allure prodigieuse ? Ne cherchez pas plus loin, l’Oiseau de Paradis est celle qu’il vous faut. Habillée de longues et fines tiges avec, à leurs extrémités, de larges feuilles palmées qui retombent, elle a de quoi faire craquer les amoureux des plantes ! Misez sur un look tendance pour votre décoration d’intérieur, en invitant cette plante tropicale chez vous. avide de regards, la Strelitzia Nicolai se plaira partout où vous pourrez l’admirer dans toute sa splendeur. Offrez à cette belle plante de la luminosité, un peu de soleil, beaucoup d’amour et... Regardez-la s’épanouir !"
+    "productName": "strelitzia",
+    "productPrice": 43.00,
+    "productDescription": "Vous cherchez une plante à l’allure prodigieuse ? Ne cherchez pas plus loin, l’Oiseau de Paradis est celle qu’il vous faut. Habillée de longues et fines tiges avec, à leurs extrémités, de larges feuilles palmées qui retombent, elle a de quoi faire craquer les amoureux des plantes ! Avide de regards, la Strelitzia Nicolai se plaira partout où vous pourrez l’admirer dans toute sa splendeur."
   },
   {
     "productName": "tutti_frutti",
-    "productPrice": 12.00,
-    "productDescription": "Délivrez vos plus beaux messages avec notre bouquet rond Tutti frutti, une création florale composée de roses, œillets, germinis, hypéricums et autres fleurs variées aux couleurs rouge, jaune, rose et orangée. Un bouquet élégant qui se veut la signature de votre bon goût en toute occasion, sur un lieu de travail comme à la maison."
+    "productPrice": 45.00,
+    "productDescription": "Délivrez vos plus beaux messages avec notre bouquet rond Tutti frutti, une création florale composée de roses, œillets, germinis, hypéricums et autres fleurs variées aux couleurs rouge, jaune, rose et orangée."
   },
   {
-    "productName": "vanille_fraise",
-    "productPrice": 12.00,
+    "productName": "duo",
+    "productPrice": 40.00,
     "productDescription": "Véritable petit bijou floral, notre bouquet Vanille fraise ne manquera pas de faire le plus bel effet auprès de votre destinataire. Composé en rose et blanc, avec des roses et des baies, ce ravissant bouquet rond promet d'accompagner vos plus beaux messages en toute occasion."
   },
   {
     "productName": "velours",
-    "productPrice": 12.00,
+    "productPrice": 48.00,
     "productDescription": "Surprise et émotion sont au programme de notre bouquet Velours, une création généreuse et champêtre qui vous invite à partager avec votre destinataire tous les petits bonheurs de la vie. Composé en camaïeu rose parme avec des roses et autres fleurs variées mises en valeur par un feuillage original de saison, ce bouquet rond s'offre sans modération et en toute occasion."
   },
   {
     "productName": "zamioculcas",
-    "productPrice": 12.00,
+    "productPrice": 80.00,
     "productDescription": "Voilà la simplicité faite plante ! Les fans de déco sobre et chic craqueront forcément pour ce joli végétal. Des feuilles brillantes délicatement relevées dans un port plein de style. Une esthétique minimaliste aux formes très géométriques. La plante ZZ (le petit nom de Zamioculcas Zamiifolia) coche toutes les cases des intérieurs épurés et élégants. Son entretien, lui aussi, est minimal : elle s’adapte aux pièces lumineuses comme aux éclairages plus tamisés. La proximité de zones de chaleur est déconseillée, pour conserver l’humidité dont elle a besoin. Zamioculcas est le meilleur choix pour inviter la nature chez soi facilement et sans effort."
   }
 ]
