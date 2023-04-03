@@ -42,6 +42,32 @@
 
             </SearchView>
 
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="100dp"
+                >
+
+                <ImageView
+                    android:id="@+id/rondRougeMain"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="-25dp"
+                    android:src="@drawable/rond_rouge" />
+
+                <TextView
+                    android:id="@+id/nbCardMain"
+                    android:textColor="@color/white"
+                    android:textSize="17dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0"
+                    android:text="0" />
+            </LinearLayout>
+
             <ImageView
                 android:id="@+id/iv_shoppingCart"
                 android:layout_width="50dp"

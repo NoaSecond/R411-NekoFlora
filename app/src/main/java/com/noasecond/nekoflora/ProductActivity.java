@@ -12,6 +12,8 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
@@ -41,12 +43,23 @@ public class ProductActivity extends AppCompatActivity {
         choosedProduct = (Product) intent.getSerializableExtra("ChoosedProduct");
 
         //Init
-        TextView tv_titleProduct = (TextView) findViewById(R.id.tv_titleProduct);
-        TextView tv_productPageDesc = (TextView) findViewById(R.id.tv_descriptionProduct);
-        GridView gv_productPage = (GridView) findViewById(R.id.gv_productPage);
-        ImageView iv_shoppingCartProduct = (ImageView) findViewById(R.id.iv_shoppingCartProduct);
-        Button btn_addToCart = (Button) findViewById(R.id.btn_addToCart);
-        ConstraintLayout cl_product = (ConstraintLayout) findViewById(R.id.cl_product);
+        TextView tv_titleProduct = findViewById(R.id.tv_titleProduct);
+        TextView tv_productPageDesc = findViewById(R.id.tv_descriptionProduct);
+        GridView gv_productPage = findViewById(R.id.gv_productPage);
+        ImageView iv_shoppingCartProduct = findViewById(R.id.iv_shoppingCartProduct);
+        Button btn_addToCart = findViewById(R.id.btn_addToCart);
+        ConstraintLayout cl_product = findViewById(R.id.cl_product);
+        ImageView rondRouge = findViewById(R.id.rondRouge);
+        TextView nbCard = findViewById(R.id.nbCard);
+        if (selectedProducts.size()>9){
+            nbCard.setText("9+");
+
+        }
+        else{
+            nbCard.setText(""+ selectedProducts.size());
+        }
+
+
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -74,18 +87,32 @@ public class ProductActivity extends AppCompatActivity {
         //Bind shopping cart
         iv_shoppingCartProduct.setOnClickListener(e -> {
             if(selectedProducts.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Veuillez choisir au moin 1 produit.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Veuillez choisir au moins 1 produit.", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intentCart = new Intent(getApplicationContext(), CartActivity.class);
                 intentCart.putExtra("SelectedProducts", selectedProducts);
                 startActivity(intentCart);
+
             }
         });
 
         //Bind add to cart
-        btn_addToCart.setOnClickListener(e -> {
-            selectedProducts.add(choosedProduct);
-            Toast.makeText(getApplicationContext(), "Produit ajouté au pannier !", Toast.LENGTH_SHORT).show();
-        });
+        btn_addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rondRouge.startAnimation(AnimationUtils.loadAnimation(ProductActivity.this, R.anim.add));
+                selectedProducts.add(choosedProduct);
+                Toast.makeText(getApplicationContext(), "Produit ajouté au pannier !", Toast.LENGTH_SHORT).show();
+                if (selectedProducts.size()>9){
+                    nbCard.setText("9+");
+
+                }
+                else{
+                    nbCard.setText(""+ selectedProducts.size());
+                }
+            }
+        }
+        );
+
     }
 }

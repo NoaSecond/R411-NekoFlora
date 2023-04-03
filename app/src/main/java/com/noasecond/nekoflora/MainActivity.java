@@ -14,6 +14,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -40,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
         display.setAdapter(adapter);
 
         //Init
-        sv_searchBar = (SearchView) findViewById(R.id.sv_searchBar);
-        iv_shoppingCart = (ImageView) findViewById(R.id.iv_shoppingCart);
-        gv_productList = (GridView) findViewById(R.id.gv_productList);
-        cl_main = (ConstraintLayout) findViewById(R.id.cl_main);
+        sv_searchBar = findViewById(R.id.sv_searchBar);
+        iv_shoppingCart = findViewById(R.id.iv_shoppingCart);
+        gv_productList = findViewById(R.id.gv_productList);
+        cl_main = findViewById(R.id.cl_main);
+
 
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
@@ -67,6 +69,22 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void onResume() {
+
+        super.onResume();
+        ImageView rondRouge = findViewById(R.id.rondRougeMain);
+        TextView nbCard = findViewById(R.id.nbCardMain);
+        if (selectedProducts.size()>9){
+            nbCard.setText("9+");
+
+        }
+        else{
+            nbCard.setText(""+ selectedProducts.size());
+        }
+
+
+
+    }
     public void openProductActivity(Product choosedProduct) {
         Bundle bundle = new Bundle();
         bundle.putString("mainContext", this.getApplicationContext().toString());
