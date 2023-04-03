@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iv_shoppingCart;
     private GridView gv_productList;
     private ConstraintLayout cl_main;
+    private String queryText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,21 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), CartActivity.class);
                 intent.putExtra("SelectedProducts", selectedProducts);
                 startActivity(intent);
+            }
+        });
+
+        //Bind search bar
+        sv_searchBar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                queryText = query;
+                //TODO afficher les fleurs correspondantes
+                return false;
+            }
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                queryText = newText;
+                return false;
             }
         });
     }

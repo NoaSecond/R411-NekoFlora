@@ -3,6 +3,7 @@ package com.noasecond.nekoflora;
 import static com.noasecond.nekoflora.MainActivity.selectedProducts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
@@ -33,6 +34,7 @@ public class PaymentActivity extends AppCompatActivity {
     private EditText et_cvv;
     private EditText et_expirationDate;
     private EditText et_cardNumber;
+    private ConstraintLayout cl_payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class PaymentActivity extends AppCompatActivity {
         et_cardNumber = findViewById(R.id.et_cardNumber);
         et_cvv = findViewById(R.id.et_cvv);
         et_expirationDate = findViewById(R.id.et_expirationDate);
+        cl_payment = findViewById(R.id.cl_payment);
 
         //Define
         tv_recapPayment.setText("Récapitulatif de la commande :");
@@ -78,6 +81,7 @@ public class PaymentActivity extends AppCompatActivity {
         //DarkMode & DayMode
         int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         if (nightModeFlags != Configuration.UI_MODE_NIGHT_YES) {
+            cl_payment.setBackgroundColor(ContextCompat.getColor(this, R.color.dayBackground));
             tv_titlePayment.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             tv_recapPayment.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             tv_firstnamePayment.setTextColor(ContextCompat.getColor(this, R.color.dayText));
@@ -85,6 +89,7 @@ public class PaymentActivity extends AppCompatActivity {
             tv_purchasePayment.setTextColor(ContextCompat.getColor(this, R.color.dayText));
             tv_addressPayment.setTextColor(ContextCompat.getColor(this, R.color.dayText));
         } else {
+            cl_payment.setBackgroundColor(ContextCompat.getColor(this, R.color.nightBackground));
             tv_titlePayment.setTextColor(ContextCompat.getColor(this, R.color.nightText));
             tv_recapPayment.setTextColor(ContextCompat.getColor(this, R.color.nightText));
             tv_firstnamePayment.setTextColor(ContextCompat.getColor(this, R.color.nightText));
