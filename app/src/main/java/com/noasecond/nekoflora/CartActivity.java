@@ -1,8 +1,5 @@
 package com.noasecond.nekoflora;
 
-import static com.noasecond.nekoflora.MainActivity.selectedProducts;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
@@ -14,7 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,9 +40,12 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
     private ConstraintLayout cl_cart;
     private Intent intent;
     private LinearLayout ll_livraison;
-    private EditText et_firstname;
-    private EditText et_lastname;
+    private EditText et_firstnameRetrait;
+    private EditText et_lastnameRetrait;
+    private EditText et_firstnameLivraison;
+    private EditText et_lastnameLivraison;
     private EditText et_postalAddress;
+    private LinearLayout ll_retrait;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +65,11 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         cl_cart = findViewById(R.id.cl_cart);
         btn_checkout = findViewById(R.id.btn_checkout);
         ll_livraison = findViewById(R.id.ll_livraison);
-        et_firstname = findViewById(R.id.et_firstname);
-        et_lastname = findViewById(R.id.et_lastname);
+        ll_retrait = findViewById(R.id.ll_retrait);
+        et_firstnameRetrait = findViewById(R.id.et_firstnameRetrait);
+        et_lastnameRetrait = findViewById(R.id.et_lastnameRetrait);
+        et_firstnameLivraison = findViewById(R.id.et_firstnameLivraison);
+        et_lastnameLivraison = findViewById(R.id.et_lastnameLivraison);
         et_postalAddress = findViewById(R.id.et_postalAddress);
 
         //Define
@@ -109,7 +111,7 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         btn_checkout.setOnClickListener(e -> {
             if(delivery) {
                 //Mode livraison
-                if (et_firstname.getText().toString().trim().isEmpty() || et_lastname.getText().toString().trim().isEmpty() || et_postalAddress.getText().toString().trim().isEmpty()) {
+                if (et_firstnameLivraison.getText().toString().trim().isEmpty() || et_lastnameLivraison.getText().toString().trim().isEmpty() || et_postalAddress.getText().toString().trim().isEmpty()) {
                     //Champs non remplis
                     Toast.makeText(getApplicationContext(), "Veuillez renseigner les informations.", Toast.LENGTH_SHORT).show();
                 } else {
@@ -120,20 +122,28 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
                     Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
                     intentPayment.putExtra("totalPrice", totalPrice);
                     intentPayment.putExtra("delivery", delivery);
-                    intentPayment.putExtra("firstname", et_firstname.getText().toString());
-                    intentPayment.putExtra("lastname", et_lastname.getText().toString());
+                    intentPayment.putExtra("firstname", et_firstnameLivraison.getText().toString());
+                    intentPayment.putExtra("lastname", et_lastnameLivraison.getText().toString());
                     intentPayment.putExtra("postalAddress", et_postalAddress.getText().toString());
                     startActivity(intentPayment);
                 }
             } else {
                 //Mode retrait
-                for (Product product : selectedProducts) {
-                    totalPrice+= product.getProductPrice();
+                if(et_firstnameRetrait.getText().toString().trim().isEmpty() || et_lastnameRetrait.getText().toString().trim().isEmpty()) {
+                    //Champs non remplis
+                    Toast.makeText(getApplicationContext(), "Veuillez renseigner les informations.", Toast.LENGTH_SHORT).show();
+                } else {
+                    //Champs remplis
+                    for (Product product : selectedProducts) {
+                        totalPrice+= product.getProductPrice();
+                    }
+                    Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
+                    intentPayment.putExtra("totalPrice", totalPrice);
+                    intentPayment.putExtra("delivery", delivery);
+                    intentPayment.putExtra("firstname", et_firstnameRetrait.getText().toString());
+                    intentPayment.putExtra("lastname", et_lastnameRetrait.getText().toString());
+                    startActivity(intentPayment);
                 }
-                Intent intentPayment = new Intent(CartActivity.this, PaymentActivity.class);
-                intentPayment.putExtra("totalPrice", totalPrice);
-                intentPayment.putExtra("delivery", delivery);
-                startActivity(intentPayment);
             }
         });
 
@@ -143,7 +153,7 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
                     ll_tabWrap.removeAllViews();
-                    ll_tabWrap.addView(mapView);
+                    ll_tabWrap.addView(ll_retrait);
                     delivery = false;
                 } else {
                     ll_tabWrap.removeAllViews();

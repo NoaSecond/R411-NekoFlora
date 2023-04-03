@@ -69,11 +69,34 @@
             android:layout_weight="1"
             android:orientation="vertical">
 
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/map_view"
+            <LinearLayout
+                android:id="@+id/ll_retrait"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="mapView" />
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_lastnameRetrait"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Nom"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/et_firstnameRetrait"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Prénom"
+                    android:inputType="textPersonName" />
+
+                <com.google.android.gms.maps.MapView
+                    android:id="@+id/map_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="mapView" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/ll_livraison"
@@ -82,19 +105,19 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/et_firstname"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:hint="Prénom"
-                    android:inputType="textPersonName" />
-
-                <EditText
-                    android:id="@+id/et_lastname"
+                    android:id="@+id/et_lastnameLivraison"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:hint="Nom"
+                    android:inputType="textPersonName" />
+
+                <EditText
+                    android:id="@+id/et_firstnameLivraison"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Prénom"
                     android:inputType="textPersonName" />
 
                 <EditText

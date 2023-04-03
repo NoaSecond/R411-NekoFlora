@@ -23,9 +23,9 @@ public class PaymentActivity extends AppCompatActivity {
         Intent intent = getIntent();
         totalPrice = getIntent().getDoubleExtra("totalPrice", 0.0);
         delivery = getIntent().getBooleanExtra("delivery", false);
+        firstname = getIntent().getStringExtra("firstname");
+        lastname = getIntent().getStringExtra("lastname");
         if (delivery) {
-            firstname = getIntent().getStringExtra("firstname");
-            lastname = getIntent().getStringExtra("lastname");
             postalAddress = getIntent().getStringExtra("postalAddress");
         }
     }
