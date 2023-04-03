@@ -59,7 +59,7 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Init
         ll_tabWrap = findViewById(R.id.ll_tabWrap);
         mapView = findViewById(R.id.map_view);
-        tv_titleCart = findViewById(R.id.tv_titleCart);
+        tv_titleCart = findViewById(R.id.tv_titlePayment);
         display = findViewById(R.id.linearLayoutProductList);
         tabLayout = findViewById(R.id.simpleTabLayout);
         cl_cart = findViewById(R.id.cl_cart);

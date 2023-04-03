@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".PaymentActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_logoPayment"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="10dp"
+                android:layout_weight="0"
+                app:srcCompat="@drawable/nekoflora_logo" />
+
+            <TextView
+                android:id="@+id/tv_titlePayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:textColor="#323232"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_recapPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_firstnamePayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_lastnamePayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_purchasePayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_addressPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
