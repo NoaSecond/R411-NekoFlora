@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private GridView gv_productList;
     private ConstraintLayout cl_main;
     private String queryText;
+    private Context contextRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         iv_shoppingCart = findViewById(R.id.iv_shoppingCart);
         gv_productList = findViewById(R.id.gv_productList);
         cl_main = findViewById(R.id.cl_main);
+
+        //Define
+        this.contextRef = this;
 
 
         //DarkMode & DayMode
@@ -74,12 +79,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 queryText = query;
-                //TODO afficher les fleurs correspondantes
+                ArrayList<Product> queryProductList = new ArrayList<>();
+                for (Object obj : productList.productList) {
+                    Product queryProduct = (Product) obj;
+                    if (queryProduct.getProductName().startsWith(queryText)) {
+                        queryProductList.add(queryProduct);
+                    }
+                }
+                ProductAdapter adapterQuery = new ProductAdapter(contextRef, queryProductList);
+                display.setAdapter(adapterQuery);
                 return false;
             }
             @Override
             public boolean onQueryTextChange(String newText) {
                 queryText = newText;
+                ArrayList<Product> queryProductList = new ArrayList<>();
+                for (Object obj : productList.productList) {
+                    Product queryProduct = (Product) obj;
+                    if (queryProduct.getProductName().startsWith(queryText)) {
+                        queryProductList.add(queryProduct);
+                    }
+                }
+                ProductAdapter adapterQuery = new ProductAdapter(contextRef, queryProductList);
+                display.setAdapter(adapterQuery);
                 return false;
             }
         });
