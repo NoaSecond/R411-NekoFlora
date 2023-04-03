@@ -18,7 +18,7 @@
             android:id="@+id/iv_productImage"
             android:layout_width="170dp"
             android:layout_height="170dp"
-            app:srcCompat="@drawable/ly" />
+            app:srcCompat="@drawable/anthurium" />
 
         <LinearLayout
             android:layout_width="match_parent"
