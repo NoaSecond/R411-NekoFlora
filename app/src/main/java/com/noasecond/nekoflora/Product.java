@@ -8,6 +8,7 @@ public class Product implements Serializable {
     String productDescription;
     int productDrawableID;
 
+    //PRODUCT CONSTRUCTOR
     public Product(String productName, double productPrice, String productDescription, int productDrawableID) {
         this.productName = productName;
         this.productPrice = productPrice;

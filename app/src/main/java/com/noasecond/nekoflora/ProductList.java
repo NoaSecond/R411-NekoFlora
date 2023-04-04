@@ -10,6 +10,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 public class ProductList {
+    //LIST OF PRODUCT FOR ADAPTER
     private Context context;
     public ArrayList productList = new ArrayList<Product>();
 

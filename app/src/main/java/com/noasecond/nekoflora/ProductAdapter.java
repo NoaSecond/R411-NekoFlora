@@ -21,7 +21,7 @@ public class ProductAdapter extends BaseAdapter {
     ImageView display_productImage;
     TextView display_productName;
     TextView display_productPrice;
-    private ArrayList<Product> productList;
+    private ArrayList<Product> productList;//LIST OF ALL PRODUCT
     private Context context;
     private LayoutInflater mInflater;
 
@@ -81,6 +81,6 @@ public class ProductAdapter extends BaseAdapter {
             alertDialog.show();
         });
 
-        return layoutItem; //On retourne l'item créé.
+        return layoutItem; //RETURN NEW ITEM.
     }
 }

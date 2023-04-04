@@ -104,6 +104,8 @@ public class PaymentActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Veuillez renseigner les champs.", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+                selectedProducts.clear();
+                Toast.makeText(getApplicationContext(), "Commande validée !", Toast.LENGTH_LONG).show();
                 startActivity(intentMain);
             }
         });

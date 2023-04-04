@@ -110,12 +110,12 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
         //Bind checkout_button
         btn_checkout.setOnClickListener(e -> {
             if(delivery) {
-                //Mode livraison
+                //DELIVERY MODE
                 if (et_firstnameLivraison.getText().toString().trim().isEmpty() || et_lastnameLivraison.getText().toString().trim().isEmpty() || et_postalAddress.getText().toString().trim().isEmpty()) {
-                    //Champs non remplis
+                    //EMPTY FIELD
                     Toast.makeText(getApplicationContext(), "Veuillez renseigner les informations.", Toast.LENGTH_SHORT).show();
                 } else {
-                    //Champs remplis
+                    //FIELDS OK
                     for (Product product : selectedProducts) {
                         totalPrice+= product.getProductPrice();
                     }
@@ -128,12 +128,12 @@ public class CartActivity extends AppCompatActivity implements OnMapReadyCallbac
                     startActivity(intentPayment);
                 }
             } else {
-                //Mode retrait
+                //WITHDRAWAL MODE
                 if(et_firstnameRetrait.getText().toString().trim().isEmpty() || et_lastnameRetrait.getText().toString().trim().isEmpty()) {
-                    //Champs non remplis
+                    //EMPTY FIELD
                     Toast.makeText(getApplicationContext(), "Veuillez renseigner les informations.", Toast.LENGTH_SHORT).show();
                 } else {
-                    //Champs remplis
+                    //FIELDS OK
                     for (Product product : selectedProducts) {
                         totalPrice+= product.getProductPrice();
                     }

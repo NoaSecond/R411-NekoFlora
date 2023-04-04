@@ -83,13 +83,15 @@ public class MainActivity extends AppCompatActivity {
                 for (Object obj : productList.productList) {
                     Product queryProduct = (Product) obj;
                     if (queryProduct.getProductName().startsWith(queryText)) {
-                        queryProductList.add(queryProduct);
+                        queryProductList.add(queryProduct); //ADD PRODUCT WITH SEARCH NAME
                     }
                 }
+                //CREATE NEW ADAPTER WITH THE NEW LIST
                 ProductAdapter adapterQuery = new ProductAdapter(contextRef, queryProductList);
                 display.setAdapter(adapterQuery);
                 return false;
             }
+            //UPDATE IF SEARCH CHANGE
             @Override
             public boolean onQueryTextChange(String newText) {
                 queryText = newText;
