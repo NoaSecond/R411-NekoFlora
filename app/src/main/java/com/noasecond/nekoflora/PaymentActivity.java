@@ -110,7 +110,7 @@ public class PaymentActivity extends AppCompatActivity {
 
         //Bind checkout_button
         btn_payment.setOnClickListener(e -> {
-            if(et_emailPayment.toString().isEmpty() || et_expirationDate.toString().isEmpty() || et_cvv.toString().isEmpty() || et_cardNumber.toString().isEmpty()) {
+            if(et_emailPayment.getText().toString().trim().isEmpty() || et_expirationDate.getText().toString().trim().isEmpty() || et_cvv.getText().toString().trim().isEmpty() || et_cardNumber.getText().toString().trim().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Veuillez renseigner les champs.", Toast.LENGTH_SHORT).show();
             } else {
 
