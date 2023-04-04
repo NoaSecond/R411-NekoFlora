@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         //Bind shopping cart
         iv_shoppingCart.setOnClickListener(e -> {
             if(selectedProducts.isEmpty()) {
-                Toast.makeText(getApplicationContext(), "Veuillez choisir au moin 1 produit.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Veuillez choisir au moins 1 produit.", Toast.LENGTH_LONG).show();
             } else {
                 Intent intent = new Intent(getApplicationContext(), CartActivity.class);
                 intent.putExtra("SelectedProducts", selectedProducts);

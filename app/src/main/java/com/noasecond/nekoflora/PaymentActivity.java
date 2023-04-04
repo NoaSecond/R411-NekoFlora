@@ -10,6 +10,9 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -35,6 +38,9 @@ public class PaymentActivity extends AppCompatActivity {
     private EditText et_expirationDate;
     private EditText et_cardNumber;
     private ConstraintLayout cl_payment;
+
+    private TextView load1;
+    private TextView load2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +70,10 @@ public class PaymentActivity extends AppCompatActivity {
         et_cvv = findViewById(R.id.et_cvv);
         et_expirationDate = findViewById(R.id.et_expirationDate);
         cl_payment = findViewById(R.id.cl_payment);
+        load1 = findViewById(R.id.load1);
+        load1.setVisibility(View.INVISIBLE);
+        load2 = findViewById(R.id.load2);
+        load2.setVisibility(View.INVISIBLE);
 
         //Define
         tv_recapPayment.setText("Récapitulatif de la commande :");
@@ -103,10 +113,24 @@ public class PaymentActivity extends AppCompatActivity {
             if(et_emailPayment.toString().isEmpty() || et_expirationDate.toString().isEmpty() || et_cvv.toString().isEmpty() || et_cardNumber.toString().isEmpty()) {
                 Toast.makeText(getApplicationContext(), "Veuillez renseigner les champs.", Toast.LENGTH_SHORT).show();
             } else {
-                Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
-                selectedProducts.clear();
-                Toast.makeText(getApplicationContext(), "Commande validée !", Toast.LENGTH_LONG).show();
-                startActivity(intentMain);
+
+                    load1.setVisibility(View.VISIBLE);
+                    load1.startAnimation(AnimationUtils.loadAnimation(PaymentActivity.this, R.anim.load));
+                    load1.setVisibility(View.INVISIBLE);
+                    load2.setVisibility(View.VISIBLE);
+                    load2.startAnimation(AnimationUtils.loadAnimation(PaymentActivity.this, R.anim.load2));
+                    load2.setVisibility(View.INVISIBLE);
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        Intent intentMain = new Intent(getApplicationContext(), MainActivity.class);
+                        selectedProducts.clear();
+                        Toast.makeText(getApplicationContext(), "Commande validée !", Toast.LENGTH_LONG).show();
+                        startActivity(intentMain);
+                    }
+                }, 5000);
+
             }
         });
     }
